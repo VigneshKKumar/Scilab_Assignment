@@ -6,7 +6,7 @@ function col_span(a)
         while (a(i,k) == 0 && k <= m)
             k = k + 1;
         end
-        for j=i+1:n
+        for j = i+1:n
             if(a(i,k)<>0)
                 a(j,:) = a(j,:) - (a(j,k)/a(i,k)) * a(i,:);
             end
