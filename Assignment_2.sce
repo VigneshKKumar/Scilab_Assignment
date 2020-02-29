@@ -2,21 +2,30 @@ function col_span(a)
     [n,m] = size(a);
     disp("Column Span:");
     for i=1:n-1
+        k = i
+        while (a(i,k) == 0 && k <= m)
+            k = k + 1;
+        end
         for j=i+1:n
-            a(j,:) = a(j,:) - (a(j,i)/a(i,i)) * a(i,:);
+            if(a(i,k)<>0)
+                a(j,:) = a(j,:) - (a(j,k)/a(i,k)) * a(i,:);
+            end
         end
         disp(a);
     end
     for i=1:n
-        if(a(i,i)<>0)
-            a(i,:)=a(i,:)/a(i,i);
+        for j=i:m
+            if(a(i,j)<>0)
+                a(i,:)=a(i,:)/a(i,j);
+                break;
+            end
         end
     end
     disp(a)
     for i=1:n
         for j=i:m
             if(a(i,j)<>0)
-                disp('is a pivot element ',j,'column');
+                disp('is a pivot column',j,'column');
                 break
             end
         end
