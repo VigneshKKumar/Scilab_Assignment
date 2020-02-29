@@ -1,4 +1,5 @@
-function col_span(a,n)
+function col_span(a)
+    [n,m] = size(a);
     disp("Column Span:");
     for i=1:n-1
         for j=i+1:n
@@ -13,7 +14,7 @@ function col_span(a,n)
     end
     disp(a)
     for i=1:n
-        for j=i:n
+        for j=i:m
             if(a(i,j)<>0)
                 disp('is a pivot element ',j,'column');
                 break
@@ -44,5 +45,5 @@ endfunction
 
 a = x_matrix("Enter matrix:",zeros(3,3));
 disp(a,"a = ");
-col_span(a,3);
+col_span(a);
 fundamental_spaces(a);
