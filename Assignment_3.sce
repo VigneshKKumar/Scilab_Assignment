@@ -1,17 +1,15 @@
-function bestfit(A,b,C,D)
+function bestfit(A,b)
     x=(A'*A)\ (A'*b);
     disp (x, 'x=');
     C=x(1,1);
     D=x(2,1);
+    disp(C,"C =");
+    disp(D,"D =");
 endfunction
 
 A=[1 -1;1 1;1 2];
 disp(A, 'A=');
 b=[1;1;3];
-C=[];
-D=[];
-bestfit(A,b,C,D);
 disp(b, 'b=');
-disp(C, 'C=');
-disp(D, 'D=');
+bestfit(A,b);
 disp('The-line of best fit -is b=C+Dt');
