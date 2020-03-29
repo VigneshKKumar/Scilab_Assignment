@@ -1,5 +1,5 @@
 function bestfit(A,b)
-    x=(A'*A)\ (A'*b);
+    x=(A' *A)\ (A'*b);
     disp (x, 'x=');
     C=x(1,1);
     D=x(2,1);
