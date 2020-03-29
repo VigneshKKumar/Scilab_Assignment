@@ -8,6 +8,8 @@ endfunction
 A=[1 -1;1 1;1 2];
 disp(A, 'A=');
 b=[1;1;3];
+C=[];
+D=[];
 bestfit(A,b,C,D);
 disp(b, 'b=');
 disp(C, 'C=');
